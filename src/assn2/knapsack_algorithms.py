@@ -39,24 +39,28 @@ def knapsack_bool(i, size):
 	return knapsack_bool(i - 1, size - S[i]) or knapsack_bool(i - 1, size)
 
 
-def optimize_knaps(i, k1, k2, v1=0.0, v2=0.0)->float:
-	# overfilled knapsack not allowed
+def optimize_knaps(i, k1, k2)->float:
 	if k1 < 0 or k2 < 0:
 		return -1000000000000.0
-	# ran out of stones
 	if i < 0:
 		return 0.0
-	# optimize putting stone in either knapsack1, knapsack2, no throwing it away
-	knaps1 = optimize_knaps(i-1, k1-S[i], k2, v1, v2)
-	knaps2 = optimize_knaps(i-1, k1, k2-S[i], v1, v2)
-	noknaps = optimize_knaps(i-1, k1, k2, v1, v2)
-	m = max(knaps1,	knaps2,	noknaps)
-	if m == knaps1:
-		v1 += V[i]
-	if m == knaps2:
-		v2 += V[i]
 
-	return v1 + v2
+	return max(optimize_knaps(i - 1, k1 - S[i], k2) + V[i], optimize_knaps(i - 1, k1, k2 - S[i]) + V[i],
+	           optimize_knaps(i - 1, k1, k2))
+
+	# # optimize putting stone in either knapsack1, knapsack2, no throwing it away
+	# if k1 - S[i] < 0:
+	# 	if k2 - S[i] < 0:
+	# 		# both can't fit stone i
+	# 		return optimize_knaps(i-1, k1, k2)
+	# 	else:
+	# 		# k1 can't fit stone i
+	# 		return max(optimize_knaps(i - 1, k1, k2 - S[i]) + V[i], optimize_knaps(i - 1, k1, k2))
+	# elif k2 - S[i] < 0:
+	# 	# k2 can't fit stone i
+	# 	return max(optimize_knaps(i - 1, k1 - S[i], k2) + V[i], optimize_knaps(i - 1, k1, k2))
+	# # they both can fit stone i
+	#
 
 
 def knapsack_dp(i, size):
@@ -78,7 +82,7 @@ def make_cache(i, size):
 
 
 
-N = 6
+N = 3
 K1 = 40
 K2 = 30
 
