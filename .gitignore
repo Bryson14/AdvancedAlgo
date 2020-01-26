@@ -77,3 +77,4 @@ fabric.properties
 *.PNG
 *.xlsx
 *.docx
+__pychache__/
