@@ -3,11 +3,11 @@ import sys
 
 
 VALID_INPUT = {
-	'R': ['run the knapsack algo', 'run_simple'],
-	'D': ['run the double knapsack algo', 'run_double', 'optimize_knaps'],
-	'DD': ['run the double knapsack dynamic algo', 'run_double', 'optimize_dp_knaps'],
-	'DM': ['run the double knapsack memoizing algo', 'run_double', 'optimize_memo_knaps'],
-	'C': ['compare the time complexity of the different algos', 'run_memo_dp_comparision'],
+	'R': ['run the knapsack algo', run_simple],
+	'D': ['run the double knapsack algo', run_double, optimize_knaps],
+	'DD': ['run the double knapsack dynamic algo', run_double, optimize_dp_knaps],
+	'DM': ['run the double knapsack memoizing algo', run_double, optimize_memo_knaps],
+	'C': ['compare the time complexity of the different algos', run_memo_dp_comparision],
 	'Q': ['quit the program', sys.exit]
 }
 
