@@ -94,17 +94,24 @@ def optimize_knapsacks_cache(n, k1, k2):
 	return C
 
 
+def run_simple():
+	pass
+
+def run_double():
+	pass
+
+
 def run_memo_dp_comparision():
 	N = valid_input('How many objects are there to choose from?')
-	K1 = valid_input('How big is knapsack 1?')
-	K2 = valid_input('How big is knapsack 2?')
+	K1 = valid_input('How big is knapsack 1? I suggest between 10 and 200.')
+	K2 = valid_input('How big is knapsack 2? I suggest between 10 and 200.')
 	average_sizes = np.random.randint(10, 100, 10)
-	with open('trails.txt') as file:
-		file.writelines(f"N={N},K1={K1},K2={K2}\naverage Sizes={average_sizes}")
+	with open('trials.txt', 'a') as file:
+		file.write(f"N={N},K1={K1},K2={K2}\naverage Sizes={average_sizes}\n\n\n")
 
 	for ave_size in average_sizes:
-		with open('trails.txt') as file:
-			file.writelines(f"starting new average size of {ave_size}")
+		with open('trials.txt', 'a') as file:
+			file.write(f"starting new average size of {ave_size}\n\n")
 
 		for trial in range(20):
 			S, V = problem_generator(N, ave_size)
@@ -115,10 +122,10 @@ def run_memo_dp_comparision():
 			optimize_dp_knaps(N+1, K1, K2)
 			end = time.time()
 
-			with open('trails.txt') as file:
-				file.writelines(f"Trial {trial+1}: "
+			with open('trials.txt', 'a') as file:
+				file.write(f"\tTrial {trial+1}: "
 				                f"memorizing time = {mid - start},"
-				                f" dynamic programming time = {end-mid}")
+				                f" dynamic programming time = {end-mid}\n")
 
 
 def valid_input(message):
@@ -136,14 +143,16 @@ N = 3
 K1 = 2
 K2 = 3
 
-
-S, V = problem_generator(N, 40)
-# double knapsack cache
-C = optimize_knapsacks_cache(N+1, K1, K2)
-print(C)
-print(f"S = {S}\nV = {V}")
-print(optimize_knaps(N, K1, K2))
-print(optimize_memo_knaps(N, K1, K2))
+# run_memo_dp_comparision()
+#
+#
+# S, V = problem_generator(N, 40)
+# # double knapsack cache
+# C = optimize_knapsacks_cache(N+1, K1, K2)
+# print(C)
+# print(f"S = {S}\nV = {V}")
+# print(optimize_knaps(N, K1, K2))
+# print(optimize_memo_knaps(N, K1, K2))
 
 #
 # for _ in range(0, 100):
