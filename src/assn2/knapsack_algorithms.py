@@ -1,5 +1,6 @@
 import numpy as np
 import time
+from random import randint
 
 
 def knapsack_hybrid(sizes: list, k: int) -> bool:
@@ -95,14 +96,23 @@ def optimize_knapsacks_cache( n, k1, k2):
 
 
 def run_simple():
+	global N
+	global K
+	global S
+	global V
 	N = valid_input('How many objects are there to choose from?')
-	K1 = valid_input('How big is knapsack 1? I suggest between 10 and 200.')
+	K = valid_input('How big is the knapsack? I suggest between 10 and 200.')
 	ave_size = valid_input(f"Average size of the stones? I suggest around {int(K1/5)}")
 	S, V = problem_generator(N, ave_size)
 	return knapsack_bool(N, K1)
 
 
 def run_double(func):
+	global N
+	global K1
+	global K2
+	global S
+	global V
 	N = valid_input('How many objects are there to choose from?')
 	K1 = valid_input('How big is knapsack 1? I suggest between 10 and 200.')
 	K2 = valid_input('How big is knapsack 2? I suggest between 10 and 200.')
@@ -112,6 +122,9 @@ def run_double(func):
 
 
 def run_memo_dp_comparision():
+	global N
+	global K1
+	global K2
 	N = valid_input('How many objects are there to choose from?')
 	K1 = valid_input('How big is knapsack 1? I suggest between 10 and 200.')
 	K2 = valid_input('How big is knapsack 2? I suggest between 10 and 200.')
@@ -124,6 +137,8 @@ def run_memo_dp_comparision():
 			file.write(f"starting new average size of {ave_size}\n\nTrial\t | memoizing time\t | dynamic program time")
 
 		for trial in range(20):
+			global S
+			global V
 			S, V = problem_generator(N, ave_size)
 
 			start = time.time()
@@ -147,30 +162,20 @@ def valid_input(message):
 
 
 # i didn't want to deal with setting up a class, so i broke the golden CS rule!
-global N
-global K1
-global K2
-global S
-global V
-global C
+# declaring global variables to random stuff
+N = 5
+K1 = 100
+K2 = 100
+K = 100
+S = [1,2,3,4]
+V = [1.2,5.2,2.3,5.8]
+C = [[1.2,.2],[1.2,1.2]]
 
-# run_memo_dp_comparision()
-#
-#
-# S, V = problem_generator(N, 40)
-# # double knapsack cache
-# C = optimize_knapsacks_cache(N+1, K1, K2)
-# print(C)
-# print(f"S = {S}\nV = {V}")
-# print(optimize_knaps(N, K1, K2))
-# print(optimize_memo_knaps(N, K1, K2))
-
-#
-# for _ in range(0, 100):
-# 	S = [randint(1, K / 2) for _ in range(0, N + 1)]
-# 	print(f"Set S if {S}. Size of sack is {K}")
-# 	if knapsack_bool(N, K):
-# 		print("Solution exists")
-# 	else:
-# 		print("Solution does not exist")
+for _ in range(0, 100):
+	S = [randint(1, K / 2) for _ in range(0, N + 1)]
+	print(f"Set S if {S}. Size of sack is {K}")
+	if knapsack_bool(N, K):
+		print("Solution exists")
+	else:
+		print("Solution does not exist")
 
