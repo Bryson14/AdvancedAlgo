@@ -1,4 +1,5 @@
 import numpy as np
+import time
 
 
 def knapsack_hybrid(sizes: list, k: int) -> bool:
@@ -48,27 +49,34 @@ def optimize_knaps(i, k1, k2)->float:
 	return max(optimize_knaps(i - 1, k1 - S[i], k2) + V[i], optimize_knaps(i - 1, k1, k2 - S[i]) + V[i],
 	           optimize_knaps(i - 1, k1, k2))
 
-	# # optimize putting stone in either knapsack1, knapsack2, no throwing it away
-	# if k1 - S[i] < 0:
-	# 	if k2 - S[i] < 0:
-	# 		# both can't fit stone i
-	# 		return optimize_knaps(i-1, k1, k2)
-	# 	else:
-	# 		# k1 can't fit stone i
-	# 		return max(optimize_knaps(i - 1, k1, k2 - S[i]) + V[i], optimize_knaps(i - 1, k1, k2))
-	# elif k2 - S[i] < 0:
-	# 	# k2 can't fit stone i
-	# 	return max(optimize_knaps(i - 1, k1 - S[i], k2) + V[i], optimize_knaps(i - 1, k1, k2))
-	# # they both can fit stone i
-	#
+
+def optimize_memo_knaps(i, k1, k2)->float:
+	if k1 < 0 or k2 < 0:
+		return -1000000000000.0
+	if i < 0:
+		return 0.0
+
+	into1 = optimize_knaps(i - 1, k1 - S[i], k2) + V[i]
+	into2 = optimize_knaps(i - 1, k1, k2 - S[i]) + V[i]
+	intoNone = optimize_knaps(i - 1, k1, k2)
+
+
+def optimize_dp_knaps(i, k1, k2)->float:
+	for n in range(1, i+1):
+		for m in range(k1):
+			for l in range(k2):
+				C[n, m, n] = max(optimize_knaps(i - 1, k1 - S[i], k2) + V[i],
+				                 optimize_knaps(i - 1, k1, k2 - S[i]) + V[i],
+	                             optimize_knaps(i - 1, k1, k2))
 
 
 def knapsack_dp(i, size):
-	pass
+	c = knapsack_cache(i, size)
+	return c[i, size]
 
 
-def make_cache(i, size):
-	cache = np.full([size+1, i], None, dtype=bool)
+def knapsack_cache(i, size):
+	cache = np.full([size+1, i], False, dtype=bool)
 	for k in range(size + 1):
 		cache[k, 0] = False
 	for j in range(i):
@@ -81,15 +89,61 @@ def make_cache(i, size):
 	return cache
 
 
+def optimize_knapsacks_cache(n, k1, k2):
+	C = np.zeros([N + 1, K1, K2], dtype=float)
+	return C
+
+
+def run_memo_dp_comparision():
+	N = valid_input('How many objects are there to choose from?')
+	K1 = valid_input('How big is knapsack 1?')
+	K2 = valid_input('How big is knapsack 2?')
+	average_sizes = np.random.randint(10, 100, 10)
+	with open('trails.txt') as file:
+		file.writelines(f"N={N},K1={K1},K2={K2}\naverage Sizes={average_sizes}")
+
+	for ave_size in average_sizes:
+		with open('trails.txt') as file:
+			file.writelines(f"starting new average size of {ave_size}")
+
+		for trial in range(20):
+			S, V = problem_generator(N, ave_size)
+
+			start = time.time()
+			optimize_memo_knaps(N+1, K1, K2)
+			mid = time.time()
+			optimize_dp_knaps(N+1, K1, K2)
+			end = time.time()
+
+			with open('trails.txt') as file:
+				file.writelines(f"Trial {trial+1}: "
+				                f"memorizing time = {mid - start},"
+				                f" dynamic programming time = {end-mid}")
+
+
+def valid_input(message):
+	print(message)
+	try:
+		response = int(input('-->\t'))
+	except ValueError:
+		print("Enter a valid integer.")
+		return valid_input(message)
+	return response
+
+
 
 N = 3
-K1 = 40
-K2 = 30
+K1 = 2
+K2 = 3
 
 
 S, V = problem_generator(N, 40)
+# double knapsack cache
+C = optimize_knapsacks_cache(N+1, K1, K2)
+print(C)
 print(f"S = {S}\nV = {V}")
 print(optimize_knaps(N, K1, K2))
+print(optimize_memo_knaps(N, K1, K2))
 
 #
 # for _ in range(0, 100):
