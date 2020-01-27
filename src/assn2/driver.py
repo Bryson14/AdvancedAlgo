@@ -13,14 +13,13 @@ VALID_INPUT = {
 
 
 def valid_input():
-	user = '?'
-	while user not in VALID_INPUT:
+	user_input = '?'
+	while user_input not in VALID_INPUT:
 		print('Enter a command for the program')
 		for algo in VALID_INPUT:
 			print(f"| {algo} : {VALID_INPUT[algo][0]} |")
-		user = input('-->').upper()
-
-	return VALID_INPUT[user]
+		user_input = input('-->').upper()
+	return VALID_INPUT[user_input]
 
 
 if __name__ == '__main__':
