@@ -1,0 +1,15 @@
+class Commander:
+    def CommandERROR(*args,**kwargs):
+       print "Invalid command"
+    def CommandFunc1(*args,**kwargs):
+       print "Do Command 1"
+    def CommandFunc2(*args,**kwargs):
+       print "Do Command 2"
+    def CallCommand(command,*args,**kwargs):
+       self.__dict__.get("Command"+command,self.CommandError)(*args,**kwargs)
+
+
+cmd = Commander()
+cmd.CallCommand("Func1","arg1",something=5)
+cmd.CallCommand("Func2","arg2",something=12)
+cmd.CallCommand("Nothing","arg1",something=5)
