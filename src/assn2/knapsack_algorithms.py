@@ -57,12 +57,10 @@ def optimize_memo_knaps(i, k1, k2)->float:
 		return C[i][k1][k2]
 
 
-
-# TODO don't know what to do for this
 def optimize_dp_knaps(i, k1, k2)->float:
 	for n in range(1, i+1):
-		for m in range(1, k1+1):
-			for l in range(1, k2+1):
+		for m in range(k1+1):
+			for l in range(k2+1):
 
 				# catches indexes less than zero
 				if m - S[n] < 0:
@@ -78,9 +76,7 @@ def optimize_dp_knaps(i, k1, k2)->float:
 
 				C[n][m][l] = max(add_one, add_two, add_none)
 
-	print(C)
-
-	return np.max(C)
+	return C[i][k1][k2]
 
 
 # TODO Write a dp for the simple knapsack problem
