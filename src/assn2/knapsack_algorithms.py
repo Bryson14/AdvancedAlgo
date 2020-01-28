@@ -131,7 +131,7 @@ def run_memo_dp_comparision():
 	N = valid_int('How many objects are there to choose from?')
 	K1 = valid_int('How big is knapsack 1? I suggest between 10 and 200.')
 	K2 = valid_int('How big is knapsack 2? I suggest between 10 and 200.')
-	average_sizes = np.random.randint(10, 100, 10)
+	average_sizes = np.random.randint(5, 120, 10)
 	with open('trials.txt', 'a') as file:
 		file.write(f"N={N},K1={K1},K2={K2}\naverage Sizes={average_sizes}\n\n\n")
 
