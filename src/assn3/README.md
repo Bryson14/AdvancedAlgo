@@ -1,0 +1,1 @@
+Run this from directory assn3

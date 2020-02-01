@@ -1,17 +1,14 @@
 import numpy as np
-import time
 
 
 # recursion is slow
-def med(i, j):
+def med_recur(i, j):
 	if i == 0:
 		return j
 	if j == 0:
 		return i
 
-	return min(med(i-1, j) + 1,
-	           med(i, j-1) + 1,
-	           med(i-1, j-1) + (A[i] != B[j]))
+	return min(med_recur(i - 1, j) + 1, med_recur(i, j - 1) + 1, med_recur(i - 1, j - 1) + (A[i] != B[j]))
 
 
 # dynamic program is fast
@@ -32,12 +29,20 @@ def med_dp(i, j):
 	return c[i, j]
 
 
-A = ' bbadsek813dsafadsfsafdsfbkdsfbdsfabcdefeghi159481'
-B = ' bbcddlfhlaiufasdfasdfldsifelifesfsefue1fabcdefghi159159'
+def med(str_a, str_b):
+	global A
+	global B
+	A = str_a
+	B = str_b
+
+	# the algorithm stops at index 0, so adding a space at the beginning of each string
+	if not A.startswith(" "):
+		A = " " + A
+	if not B.startswith(" "):
+		B = " " + B
+	return med_dp(len(A), len(B))
 
 
-mid = time.time()
-print(med_dp(len(A)-1, len(B)-1))
-end = time.time()
+A = ''
+B = ''
 
-print(f"string lengths {len(A) + len(B)} |  dp time = {end - mid}")
