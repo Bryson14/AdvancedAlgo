@@ -40,9 +40,8 @@ def med(str_a, str_b):
 		A = " " + A
 	if not B.startswith(" "):
 		B = " " + B
-	return med_dp(len(A), len(B))
+	return med_dp(len(A) - 1, len(B) - 1)
 
 
 A = ''
 B = ''
-
