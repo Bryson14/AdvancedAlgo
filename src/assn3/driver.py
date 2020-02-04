@@ -11,15 +11,21 @@ with open(file, 'r') as data:
 
 n = 0
 words_per_edits = {}
+largest = -1
+largest_word = ''
 
 for line in lines:
-	line = line.strip()
+	line = line.strip().strip('\n')
 	s = line.split('->')
-	a = s[1].split(',')
+	right_side = s[1].split(',')
 
-	for i in range(len(a)):
-		m = med(s[0], a[i])
+	for i in range(len(right_side)):
+		m = med(s[0], right_side[i])
 		n += 1
+
+		if m > largest:
+			largest = m
+			largest_word = s[0] + " -> " + right_side[i]
 
 		if m in words_per_edits:
 			words_per_edits[m] += 1
@@ -37,6 +43,7 @@ big = max(bins)
 n_bigs = words_per_edits[big]
 print(f"Execution over the database of {n} words")
 print(f"largest edit distance is {big} with {n_bigs} occurances")
+print(f"The largest edited word pair was {largest_word}")
 print(words_per_edits)
 
 plt.bar(bins, values)

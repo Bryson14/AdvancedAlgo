@@ -29,9 +29,9 @@ def med_dp(i, j):
 	return c[i, j]
 
 
+# helper function
 def med(str_a, str_b):
-	global A
-	global B
+	global A, B
 	A = str_a
 	B = str_b
 
