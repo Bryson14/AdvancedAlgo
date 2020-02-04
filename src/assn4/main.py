@@ -1,11 +1,13 @@
 import pathlib2 as path
-from MinEditDistance import med
+from minEditDNA import med
 
 
 neanderthal = 'neanderthal.txt'
 prototypical_human = 'prototypical_human.txt'
 great_apes = 'Great_Apes.txt'
 human_diversity = 'human_diversity.txt'
+
+DNA_SAMPLES = [neanderthal, prototypical_human, great_apes, human_diversity]
 
 
 def read_dna(filename: str)->str:
@@ -30,6 +32,18 @@ def clean_data(to_file: str, from_file:str ='new.txt'):
 		reciever.close()
 
 
-apes = read_dna(great_apes)
-hm = read_dna(human_diversity)
-print(med(apes, hm))
+def run_comparisons():
+	results_file = path.Path.joinpath(path.Path.cwd(), 'data', 'results.txt')
+
+	for i in range(len(DNA_SAMPLES)):
+		for j in range(i, len(DNA_SAMPLES)):
+
+			result = med(read_dna(DNA_SAMPLES[i]), read_dna(DNA_SAMPLES[j]))
+
+			with open(results_file, 'a') as file:
+				file.write(f"{DNA_SAMPLES[i].split('.')[0].capitalize()} compared "
+							f"with {DNA_SAMPLES[j].split('.')[0].capitalize()}\n\t {result}")
+
+
+
+print(med('aaagcttttt','cgtacg'))
