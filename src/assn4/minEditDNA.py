@@ -19,7 +19,6 @@ def med_dp(i, j, return_cache=False):
 	# fill in cache
 	try:
 		for x in range(1, i+1):
-			print(c)
 
 			# to track progress on large files
 			if x % 100 == 0:
@@ -27,19 +26,14 @@ def med_dp(i, j, return_cache=False):
 
 			for y in range(1, j+1):
 				# deletion from A, insertion into A, substitution
-				delete = c[x-1, y] + DNA_SCORING_DICT[''][A[x]]
-				insert = c[x, y-1] + DNA_SCORING_DICT[B[y]]['']
-				sub = c[x-1, y-1] + DNA_SCORING_DICT[A[x]][B[y]]
-				c[x, y] = max(delete, insert, sub)
-				# c[x, y] = max(c[x-1, y] + dna_scoring_dict[''][B[y]],
-				# 				c[x, y-1] + dna_scoring_dict[A[x]][''],
-				# 				c[x-1, y-1] + dna_scoring_dict[A[x]][B[y]])
+				c[x, y] = max(c[x-1, y] + DNA_SCORING_DICT[''][A[x]],
+								c[x, y-1] + DNA_SCORING_DICT[B[y]][''],
+								c[x-1, y-1] + DNA_SCORING_DICT[A[x]][B[y]])
 
 	except KeyError as e:
 		print('Sequence contains character other than a, g, c, t')
 		print(e.__str__())
 
-	print(c)
 	# return answer
 	if not return_cache:
 		return c[i, j]
@@ -63,7 +57,7 @@ def med(str_a, str_b, show_diagram=False):
 	if show_diagram:
 		c = med_dp(len(A) - 1, len(B) - 1, show_diagram)
 		s = ''
-		s += str(c[len(A) -1, len(B) - 1]) + '\n'
+		s += str(c[len(A) - 1, len(B) - 1]) + '\n'
 		s += show_alignment(str_a, str_b, c)
 		return s
 
