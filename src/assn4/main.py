@@ -11,6 +11,7 @@ human_diversity = 'human_diversity.txt'
 DNA_SAMPLES = [neanderthal, prototypical_human, great_apes, human_diversity]
 
 
+# reads in data from the .txt files. Assumes all data is on one line
 def read_dna(filename: str)->str:
 	with open(path.Path.joinpath(path.Path.cwd(), 'data', filename)) as data:
 		dna = data.read()
@@ -18,6 +19,7 @@ def read_dna(filename: str)->str:
 	return dna.strip('\n')
 
 
+# cleans data from the current format that is was taken from the web
 def clean_data(to_file: str, from_file:str ='new.txt'):
 	reciever = open(path.Path.joinpath(path.Path.cwd(), 'data', to_file), 'w+')
 	with open(path.Path.joinpath(path.Path.cwd(), 'data', from_file), 'r') as sender:
@@ -33,6 +35,7 @@ def clean_data(to_file: str, from_file:str ='new.txt'):
 		reciever.close()
 
 
+# runs comparisions between the different DNA sequences in data directory
 def run_comparisons():
 	results_file = path.Path.joinpath(path.Path.cwd(), 'data', 'results.txt')
 
@@ -46,9 +49,10 @@ def run_comparisons():
 
 			with open(results_file, 'a') as file:
 				file.write(f"{DNA_SAMPLES[i].split('.')[0].capitalize()} compared "
-							f"with {DNA_SAMPLES[j].split('.')[0].capitalize()}\n\t {result}")
+							f"with {DNA_SAMPLES[j].split('.')[0].capitalize()}\n\t {result}\n")
 
 
+# screens cmd line input
 def valid_input():
 	user_input = '?'
 	while user_input not in VALID_INPUT:
@@ -70,7 +74,7 @@ if __name__ == "__main__":
 	if command == 'MED':
 		seq1 = input('Enter DNA sequence 1: ').lower()
 		seq2 = input('Enter DNA sequence 2: ').lower()
-		print(VALID_INPUT[command][1](seq1, seq2))
+		print(VALID_INPUT[command][1](seq1, seq2, True))
 
 	else:
 		VALID_INPUT[command][1]()
