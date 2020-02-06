@@ -1,8 +1,12 @@
-Apes and Protypical Humans
-68248
-
-Apes and Human Diversity
-
-
-Apes and Neanderthal
-
+Neanderthal compared with Prototypical_human
+	 81380
+Neanderthal compared with Great_apes
+	 65715
+Neanderthal compared with Human_diversity
+	 81380
+Prototypical_human compared with Great_apes
+	 65645
+Prototypical_human compared with Human_diversity
+	 82840
+Great_apes compared with Human_diversity
+	 65645

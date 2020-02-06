@@ -144,4 +144,3 @@ DNA_SCORING_DICT = {
 	'': {'a': -3, 'c': -4, 'g': -2, 't': -1, '': 0}
 }
 
-print(med('aaagcttttt', 'cgtacg', True))
