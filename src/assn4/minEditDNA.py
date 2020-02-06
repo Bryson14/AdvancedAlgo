@@ -70,7 +70,7 @@ def med(str_a, str_b, show_diagram=False):
 
 
 # back-solves from the cache to show an alignment diagram
-def show_alignment(i, j, c):
+def show_alignment(i, j, c, filename=None):
 	x = 0
 	y = 0
 	print(f"->{A}<-")
@@ -123,7 +123,36 @@ def show_alignment(i, j, c):
 			y += 1
 			s += f"_ -> {B[y]}\n"
 
-	return s
+	if filename is not None:
+		with open(filename, 'a') as file:
+			file.write("\n")
+			file.write(s)
+	else:
+		return s
+
+
+def save_traceback(str_a, str_b, filename):
+	global A
+	global B
+	A = str_a
+	B = str_b
+
+	# the algorithm stops at index 0, so adding a space at the beginning of each string
+	if not A.startswith(" "):
+		A = " " + A
+	if not B.startswith(" "):
+		B = " " + B
+
+	# returns a diagram of the best alignment of the two strings
+	c = med_dp(len(A) - 1, len(B) - 1, True)
+	s = '\n Score = '
+	s += str(c[len(A) - 1, len(B) - 1]) + '\n' + 30 * '+'
+
+	# writing score
+	with open(filename, 'w+') as file:
+		file.write(s)
+
+	show_alignment(len(A) - 1, len(B) - 1, c, filename)
 
 
 '''
@@ -143,4 +172,3 @@ DNA_SCORING_DICT = {
 	't': {'a': -1, 'c': -2, 'g': -2, 't': 5, '': -1},
 	'': {'a': -3, 'c': -4, 'g': -2, 't': -1, '': 0}
 }
-

@@ -24,3 +24,5 @@ Something I noticed was that using NumPy arrays sped up the processing significa
 The program becomes impractical when the strings approach 100K characters each. This is because the dp algorithm needs a NxM array to create the solutions cache. At this point, there is not enough memory to create the data structure. I.e. when the strings are both 105 K characters long, the array necessary to make the cache would take up 41.1 GiB
 
 The scientific significance of this algorithm cannot be overstated. Thanks to dynamic programming, it took an operation that would have taken an infinite amount of time and reduced it to linear problem. This makes DNA sequences possible and opens up the realm of DNA study, manipulation, and control. As we advance into future, DNA altering will become easier and more reliable thanks to the work of computer scientists like us.
+
+The file human_diversity.txt was deleted because it was the same DNA sequence as prototypical_human.txt 

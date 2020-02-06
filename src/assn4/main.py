@@ -1,14 +1,13 @@
 import pathlib2 as path
-from minEditDNA import med
+from minEditDNA import med, save_traceback
 import sys
 
 
 neanderthal = 'neanderthal.txt'
 prototypical_human = 'prototypical_human.txt'
 great_apes = 'Great_Apes.txt'
-human_diversity = 'human_diversity.txt'
 
-DNA_SAMPLES = [neanderthal, prototypical_human, great_apes, human_diversity]
+DNA_SAMPLES = [neanderthal, prototypical_human, great_apes]
 
 
 # reads in data from the .txt files. Assumes all data is on one line
@@ -58,14 +57,25 @@ def valid_input():
 	while user_input not in VALID_INPUT:
 		print('Enter a valid command.')
 		for option in VALID_INPUT:
-			print(f" | {option} -- {VALID_INPUT[option][0]}")
+			print(f" | {option} -- {VALID_INPUT[option]}")
 		user_input = input('--> ').upper()
 	return user_input
 
 
 VALID_INPUT = {'C': ['Run a comparision between all the DNA', run_comparisons],
 				'MED': ['Manually enter in two DNA sequences to score', med],
+				'S': ['Run comparision between two DNA sequences and save the traceback', save_traceback],
 				'Q': ['Quit the program', sys.exit]}
+
+
+def valid_DNA():
+	user_input = '?'
+	while user_input not in DNA_SAMPLES:
+		print('Choose a DNA sequence:')
+		for option in DNA_SAMPLES:
+			print(f" | {option}")
+		user_input = input('--> ')
+	return user_input
 
 
 if __name__ == "__main__":
@@ -75,6 +85,14 @@ if __name__ == "__main__":
 		seq1 = input('Enter DNA sequence 1: ').lower()
 		seq2 = input('Enter DNA sequence 2: ').lower()
 		print(VALID_INPUT[command][1](seq1, seq2, True))
+	elif command == 'S':
+
+		print("Choose the first sequence")
+		seq1 = valid_DNA()
+		print("Choose the second sequence")
+		seq2 = valid_DNA()
+		save_traceback(read_dna(seq1), read_dna(seq2),
+					path.Path.joinpath(path.Path.cwd(), 'data', seq1.strip('.txt') + "_compareTo_" + seq2.strip('.txt')))
 
 	else:
 		VALID_INPUT[command][1]()
