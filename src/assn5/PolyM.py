@@ -1,8 +1,8 @@
 import numpy as np
 
 
-Q = np.array([1,2])
-P = np.array([1,2])
+Q = np.array([1, 2])
+P = np.array([1, 2])
 
 
 # returns an array of size 2**n which contains the coefficient for polynomials P and Q
@@ -35,6 +35,7 @@ def run_manually(p1, p2, function):
 	P = p2
 	return function()
 
+
 # for future use
 def set_globals(p1, p2):
 	global Q, P
@@ -43,32 +44,69 @@ def set_globals(p1, p2):
 
 
 '''
-Four Subproblem Foiling Algorithm
+Four Sub problem Foiling Algorithm
 PQ = Pl*Ql + x^(n/2)*(Pl*Qh+Ph*Ql) + x^n * Ph*Qh
 where Ql and Pl are the lower half of the polynomials
 and Qh and Ph are the upper half of the polynomials
 '''
+
+
 # other algorithm, with 4 sub problems
 def four_sub_other():
 	PQ = np.zeros(2*len(P), dtype=float)
-	print('PQ', PQ)
-	print('P', P)
-	print('Q', Q)
 
 	# lows
-	PQ[:len(PQ)//4] = P[:len(P)//2] * Q[:len(Q)//2]
+	lows = poly_m(P[:len(P)//2], Q[:len(Q)//2])
+	PQ[:len(lows)] = lows
 
 	# highs
-	PQ[3*len(PQ)//4 - 1: - 1] = P[len(P)//2:] * Q[len(Q)//2:]
+	highs = poly_m(P[len(P)//2:], Q[len(Q)//2:])
+	PQ[-len(highs) - 1: -1] = highs
 
 	# mids
-	PQ[len(PQ)//4:  3*len(PQ)//4 - 1] = P[len(P)//2:] * Q[:len(Q)//2] + P[:len(P)//2] * Q[len(Q)//2:]
+	mid1 = poly_m(P[len(P)//2:], Q[:len(Q)//2])
+	mid2 = poly_m(P[:len(P)//2], Q[len(Q)//2:])
+	both = mid1 + mid2
+	PQ[len(mid1)//2 + 1: len(mid1)//2 + len(mid1) + 1] += both
 
 	return PQ
 
 
 # faster version of the four sub with some tricky algebra
 def three_sub_other():
-	pass
-	
+	PQ = np.zeros(2 * len(P), dtype=float)
+
+	# lows
+	lows = poly_m(P[:len(P) // 2], Q[:len(Q) // 2])
+	PQ[:len(lows)] = lows
+
+	# highs
+	highs = poly_m(P[len(P) // 2:], Q[len(Q) // 2:])
+	PQ[-len(highs) - 1: -1] = highs
+
+	# mids
+	mid1 = poly_m(P[len(P) // 2:], Q[:len(Q) // 2])
+	mid2 = poly_m(P[:len(P) // 2], Q[len(Q) // 2:])
+	both = mid1 + mid2
+	PQ[len(mid1) // 2 + 1: len(mid1) // 2 + len(mid1) + 1] += both
+
+	return PQ
+
+
+def poly_m(arr1, arr2):
+	l1 = len(arr1)
+	l2 = len(arr2)
+
+	if l1 == 1 and l2 == 1:
+		sol = np.zeros(1, dtype=float)
+	elif l1 == 2 and l2 == 2:
+		sol = np.zeros(3, dtype=float)
+	else:
+		sol = np.zeros(l1 - 1 + l2, dtype=float)
+
+	for i in range(len(arr1)):
+		for j in range(len(arr2)):
+			sol[i+j] += arr1[i] * arr2[j]
+
+	return sol
 

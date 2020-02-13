@@ -1,282 +1,159 @@
 
-+++++Trial 1+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False]
-
-+++++Trial 2+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False]
-
 +++++Trial 3+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False]
+ Time for High school Algorithm --> 5.267510890960693
+Time for the other Algorithm --> 43.75666952133179
+Do their outputs match? --> [ True  True  True  True  True False False  True  True  True  True  True
+  True  True  True  True]
 
 +++++Trial 4+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
-
-+++++Trial 5+++++
- Time for Highschool Algorithm --> 0.000997304916381836
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False]
-
-+++++Trial 6+++++
- Time for Highschool Algorithm --> 0.0009975433349609375
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
-
-+++++Trial 7+++++
- Time for Highschool Algorithm --> 0.009446382522583008
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False]
-
-+++++Trial 8+++++
- Time for Highschool Algorithm --> 0.05514359474182129
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
-
-+++++Trial 9+++++
- Time for Highschool Algorithm --> 0.15961766242980957
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
-
-+++++Trial 10+++++
- Time for Highschool Algorithm --> 0.8313698768615723
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
-
-+++++Trial 11+++++
- Time for Highschool Algorithm --> 2.936312437057495
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
-
-+++++Trial 12+++++
- Time for Highschool Algorithm --> 11.076647758483887
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
-
-+++++Trial 1+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False]
-
-+++++Trial 2+++++
- Time for Highschool Algorithm --> 0.0
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False]
+ Time for High school Algorithm --> 0.5854942798614502
+Time for the other Algorithm --> 1.0848054885864258
+Do their outputs match? --> [ True  True  True  True  True  True  True  True False False  True False
+  True False False False  True  True  True False False False False  True
+  True  True  True  True  True  True  True  True]
 
 +++++Trial 3+++++
- Time for Highschool Algorithm --> 0.0
+ Time for High school Algorithm --> 0.0
 Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False]
+Do their outputs match? --> [ True  True  True  True  True False  True  True  True False  True  True
+  True  True  True  True]
 
 +++++Trial 4+++++
- Time for Highschool Algorithm --> 0.0009996891021728516
+ Time for High school Algorithm --> 0.0
 Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
+Do their outputs match? --> [ True  True  True  True  True  True  True  True False False  True False
+ False False  True False False  True False False False  True False  True
+  True  True  True  True  True  True  True  True]
 
 +++++Trial 5+++++
- Time for Highschool Algorithm --> 0.0010259151458740234
+ Time for High school Algorithm --> 0.0
 Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False]
+Do their outputs match? --> [ True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True False False  True False False False False  True
+  True False False False  True False False  True  True False  True  True
+  True  True False False False False  True False False False False  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True]
 
 +++++Trial 6+++++
- Time for Highschool Algorithm --> 0.002022981643676758
+ Time for High school Algorithm --> 0.0
 Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
+Do their outputs match? --> [ True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True False False  True
+ False  True False False False False  True False False False False  True
+ False  True False  True  True False  True False False False False  True
+ False False False  True False False False False False False  True False
+ False False False False False False False False False False False  True
+ False False False False False False  True  True False  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True]
 
 +++++Trial 7+++++
- Time for Highschool Algorithm --> 0.011629343032836914
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
+ Time for High school Algorithm --> 0.01564931869506836
+Time for the other Algorithm --> 0.015621185302734375
+Do their outputs match? --> [ True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True False  True  True False  True False
+ False False  True False False  True False False False False False  True
+ False False False  True False False False False False  True False  True
+ False False False False  True False  True  True False False  True False
+ False False False False False False False False  True False  True False
+  True False  True  True False False False False  True  True False  True
+ False False False  True False False False False False False False  True
+ False False False  True  True False False False False False False False
  False False False False False False False False False False False False
  False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False]
+ False False False False False  True False False False False False  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True]
 
 +++++Trial 8+++++
- Time for Highschool Algorithm --> 0.06252169609069824
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False False False False False False False False False False
+ Time for High school Algorithm --> 0.04686379432678223
+Time for the other Algorithm --> 0.03334760665893555
+Do their outputs match? --> [ True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True False  True False  True
+ False False False False False False False False False  True False False
+ False False  True False False False False False False False False False
+  True False False False False False False False False False False False
  False False False False False False False False False False False False
  False False False False False False False False False False False False
  False False False False False False False False False False False False
  False False False False False False False False False False False False
+ False False False False False False False False  True False False  True
  False False False False False False False False False False False False
+ False False False False False False False False False False False  True
  False False False False False False False False False False False False
+ False False False False False False False  True False False False False
  False False False False False False False False False False False False
+ False  True False False  True False False False False False False False
+ False False  True  True False False False False False False False False
  False False False False False False False False False False False False
+ False  True False False False False False False False False False False
  False False False False False False False False False False False False
+ False False  True False False False False False False False False False
  False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False False False False False False
- False False False False False False False]
+ False False False  True False  True False False False False False  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True  True  True  True  True
+  True  True  True  True  True  True  True  True]
 
 +++++Trial 9+++++
- Time for Highschool Algorithm --> 0.2398209571838379
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
+ Time for High school Algorithm --> 0.16241836547851562
+Time for the other Algorithm --> 0.17581892013549805
+Do their outputs match? --> [ True  True  True ...  True  True  True]
 
 +++++Trial 10+++++
- Time for Highschool Algorithm --> 0.6414484977722168
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
+ Time for High school Algorithm --> 0.7126462459564209
+Time for the other Algorithm --> 0.6562778949737549
+Do their outputs match? --> [ True  True  True ...  True  True  True]
 
 +++++Trial 11+++++
- Time for Highschool Algorithm --> 2.5875473022460938
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
+ Time for High school Algorithm --> 2.749021530151367
+Time for the other Algorithm --> 2.6687378883361816
+Do their outputs match? --> [ True  True  True ...  True  True  True]
 
 +++++Trial 12+++++
- Time for Highschool Algorithm --> 10.403186082839966
-Time for the other Algorithm --> 0.0
-Do their outputs match? --> [False False False ... False False False]
+ Time for High school Algorithm --> 13.316039085388184
+Time for the other Algorithm --> 18.03461527824402
+Do their outputs match? --> [ True  True  True ...  True  True  True]
+
++++++Trial 13+++++
+ Time for High school Algorithm --> 82.09737491607666
+Time for the other Algorithm --> 103.75127840042114
+Do their outputs match? --> [ True  True  True ...  True  True  True]
+
++++++Trial 14+++++
+ Time for High school Algorithm --> 437.4285683631897
+Time for the other Algorithm --> 417.57322692871094
+Do their outputs match? --> [ True  True  True ...  True  True  True]
+
++++++Trial 15+++++
+ Time for High school Algorithm --> 1744.4432709217072
+Time for the other Algorithm --> 1660.6493508815765
+Do their outputs match? --> [ True  True  True ...  True  True  True]

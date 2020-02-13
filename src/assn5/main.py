@@ -30,7 +30,7 @@ def get_n():
 		return get_n()
 
 
-# gets the coeffient for the manually made polynomials
+# gets the coefficient for the manually made polynomials
 def get_coefficient(poly_str: str ,x: int):
 	try:
 		n = '?'
@@ -64,11 +64,11 @@ def run_comparison():
 	filename = path.Path.joinpath(path.Path.cwd(), 'results.txt')
 	trial_sizes = []
 	high_school_runtimes = []
-	three_sub_algorithm_runtimes = []
+	four_sub_algorithm_runtimes = []
 	
-	limit = 13
+	limit = 16
 	# from assignment description, start at N=32 to as large as possible
-	for n in range(5, limit):
+	for n in range(3, limit):
 		print(f"Starting run {n} of {limit - 1}")
 		trial_sizes.append(2**n)
 		create_problem_arrays(n)
@@ -78,35 +78,34 @@ def run_comparison():
 		mid = time.time()
 		better = four_sub_other()
 		end = time.time()
-		
 
 		highschool_runtime = mid - start
-		three_sub_algorithm_runtime = end - mid
+		other_runtime = end - mid
 
 		s = ''
-		s += f"\n+++++Trial {n}+++++\n Time for Highschool Algorithm --> {highschool_runtime}\n"
-		s += f"Time for the other Algorithm --> {three_sub_algorithm_runtime}\n"
+		s += f"\n+++++Trial {n}+++++\n Time for High school Algorithm --> {highschool_runtime}\n"
+		s += f"Time for the other Algorithm --> {other_runtime}\n"
 		s += f"Do their outputs match? --> {highschool == better}\n"
 		
-		# changes very small runtimes for the sake of logrithmic plotting
+		# changes very small run times for the sake of logarithmic plotting
 		if highschool_runtime == 0.0:
 			highschool_runtime += 0.0000001
 		high_school_runtimes.append(highschool_runtime)
 		if other_runtime == 0.0:
 			other_runtime += 0.0000001
-		three_sub_algorithm_runtimes.append(other_runtime)
+		four_sub_algorithm_runtimes.append(other_runtime)
 
 		file = open(filename, 'a')
 		file.write(s)
 		file.close()
 			
 	plt.plot(np.array(trial_sizes), np.array(high_school_runtimes), label='High School')
-	plt.plot(np.array(trial_sizes), np.array(other_algorithm_runtimes), label='Other Algo')
+	plt.plot(np.array(trial_sizes), np.array(four_sub_algorithm_runtimes), label='Other Algo')
 	plt.title('Run times of High school FOILing with Other Algorithm vs Time \n(Base 2 Log Scale)')
 	plt.xscale('log', basex=2)
 	plt.yscale('log', basey=2)
 	plt.xlabel('Size of Polynomials (Log Base 2)')
-	plt.ylabel('Runtime in Log Base 2 Seconds')
+	plt.ylabel('Runtime in Log Time (Log Base 2)')
 	plt.legend()
 	plt.savefig(path.Path.joinpath(path.Path.cwd(), f'Graph(n={limit}).png'))
 	plt.show()
