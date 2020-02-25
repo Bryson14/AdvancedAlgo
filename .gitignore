@@ -79,3 +79,4 @@ fabric.properties
 *.docx
 *__pycache__/
 *.zip
+.idea/
