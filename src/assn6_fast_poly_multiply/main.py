@@ -1,4 +1,5 @@
 from PolyM import *
+import numpy as np
 import sys
 import pathlib2 as path
 import time
@@ -65,42 +66,66 @@ def run_comparison():
 	trial_sizes = []
 	high_school_runtimes = []
 	four_sub_algorithm_runtimes = []
+	three_sub_runtimes = []
 	
-	limit = 16
+	limit = 14
 	# from assignment description, start at N=32 to as large as possible
-	for n in range(3, limit):
+	for n in range(8, limit):
 		print(f"Starting run {n} of {limit - 1}")
-		trial_sizes.append(2**n)
-		create_problem_arrays(n)
-	
-		start = time.time()
-		highschool = classic_foil()
-		mid = time.time()
-		better = four_sub_other()
-		end = time.time()
 
-		highschool_runtime = mid - start
-		other_runtime = end - mid
+		# runs every algo 10x for each value of n
+		for i in range(10):
+			print(f'starting sub run {n}.{i}')
+			trial_sizes.append(2**n)
+			create_problem_arrays(n)
 
-		s = ''
-		s += f"\n+++++Trial {n}+++++\n Time for High school Algorithm --> {highschool_runtime}\n"
-		s += f"Time for the other Algorithm --> {other_runtime}\n"
-		s += f"Do their outputs match? --> {highschool == better}\n"
-		
-		# changes very small run times for the sake of logarithmic plotting
-		if highschool_runtime == 0.0:
-			highschool_runtime += 0.0000001
-		high_school_runtimes.append(highschool_runtime)
-		if other_runtime == 0.0:
-			other_runtime += 0.0000001
-		four_sub_algorithm_runtimes.append(other_runtime)
+			# times the two different algorithms
+			start = time.time()
+			highschool = classic_foil()
+			mid = time.time()
+			four = run(four_sub_other)
+			mid2 = time.time()
+			three = run(three_sub_other)
+			end = time.time()
 
-		file = open(filename, 'a')
-		file.write(s)
-		file.close()
-			
+
+			highschool_runtime = mid - start
+			four_sub_runtime = mid2 - mid
+			three_sub_runtime = end - mid2
+
+			s = ''
+			s += f"\n+++++Trial {n}.{i}+++++\n Time for High school Algorithm --> {highschool_runtime}\n"
+			s += f"Time for the other Algorithm --> {four_sub_runtime}\n"
+			s += f"Time for the three sub Algorithm --> {three_sub_runtime}\n"
+
+			# changes very small run times for the sake of logarithmic plotting
+			if highschool_runtime == 0.0:
+				highschool_runtime += 0.0000001
+			high_school_runtimes.append(highschool_runtime)
+			if four_sub_runtime == 0.0:
+				four_sub_runtime += 0.0000001
+			four_sub_algorithm_runtimes.append(four_sub_runtime)
+			if three_sub_runtime == 0.0:
+				three_sub_runtime += 0.0000001
+			three_sub_runtimes.append(three_sub_runtime)
+
+			with open(filename, 'a') as file:
+				file.write(s)
+
+	# setup for graph
 	plt.plot(np.array(trial_sizes), np.array(high_school_runtimes), label='High School')
 	plt.plot(np.array(trial_sizes), np.array(four_sub_algorithm_runtimes), label='Other Algo')
+	plt.plot(np.array(trial_sizes), np.array(three_sub_runtimes), label='Three Sub Algo')
+	print(four_sub_algorithm_runtimes)
+	print(three_sub_runtimes)
+
+	high_school_fit = np.polyfit(np.array(trial_sizes), np.array(high_school_runtimes), 1)
+	four_sub_fit = np.polyfit(np.array(trial_sizes), np.array(four_sub_algorithm_runtimes), 1)
+	three_sub_fit = np.polyfit(np.array(trial_sizes), np.array(three_sub_runtimes), 1)
+	print(high_school_fit)
+	print(four_sub_fit)
+	print(three_sub_fit)
+
 	plt.title('Run times of High school FOILing with Other Algorithm vs Time \n(Base 2 Log Scale)')
 	plt.xscale('log', basex=2)
 	plt.yscale('log', basey=2)
@@ -110,9 +135,10 @@ def run_comparison():
 	plt.savefig(path.Path.joinpath(path.Path.cwd(), f'Graph(n={limit}).png'))
 	plt.show()
 		
-		
+
+# helps with the cmd line interface
 VALID_INPUT = {
-	'S': ['Study the time between high school algorithm and the other algorithm', run_comparison],
+	'S': ['Study the time between high school, four sub, and three sub polynomial multiplication algos', run_comparison],
 	'H': ['Foil two polynomials with the High School algorithm', classic_foil],
 	'O': ['Foil two poynomials with the other algorithm', four_sub_other],
 	'3': ['Foil two polynomials with the three sub algorithm', three_sub_other],

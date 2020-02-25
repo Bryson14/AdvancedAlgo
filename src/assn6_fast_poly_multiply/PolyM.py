@@ -33,7 +33,10 @@ def run_manually(p1, p2, function):
 	global Q, P
 	Q = p1
 	P = p2
-	return function()
+
+	if function == classic_foil:
+		return function()
+	return function(p1, p2, len(p1))
 
 
 # for future use
@@ -52,47 +55,54 @@ and Qh and Ph are the upper half of the polynomials
 
 
 # other algorithm, with 4 sub problems
-def four_sub_other():
-	PQ = np.zeros(2*len(P), dtype=float)
+def four_sub_other(p: np.array, q: np.array, n: int) -> np.array:
+	PQ = np.zeros(2*n, dtype=float)
 
-	# lows
-	lows = poly_m(P[:len(P)//2], Q[:len(Q)//2])
-	PQ[:len(lows)] = lows
+	if n == 1:
+		PQ[0] = p[0]*q[0]
+		return PQ
 
-	# highs
-	highs = poly_m(P[len(P)//2:], Q[len(Q)//2:])
-	PQ[-len(highs) - 1: -1] = highs
+	PQ_ll = four_sub_other(p[:n//2], q[:n//2], n//2)
+	PQ_hh = four_sub_other(p[n//2:], q[n//2:], n//2)
+	PQ_lh = four_sub_other(p[:n//2], q[n//2:], n//2)
+	PQ_hl = four_sub_other(p[n//2:], q[:n//2], n//2)
 
-	# mids
-	mid1 = poly_m(P[len(P)//2:], Q[:len(Q)//2])
-	mid2 = poly_m(P[:len(P)//2], Q[len(Q)//2:])
-	both = mid1 + mid2
-	PQ[len(mid1)//2 + 1: len(mid1)//2 + len(mid1) + 1] += both
+	PQ[:n] = PQ_ll
+	PQ[-n:] = PQ_hh
+	PQ[n // 2: n // 2 + n] += PQ_hl + PQ_lh
 
 	return PQ
 
 
 # faster version of the four sub with some tricky algebra
-def three_sub_other():
-	PQ = np.zeros(2 * len(P), dtype=float)
+def three_sub_other(p: np.array, q: np.array, n: int) -> np.array:
+	arr = np.zeros(2*n, dtype=float)
 
-	# lows
-	lows = poly_m(P[:len(P) // 2], Q[:len(Q) // 2])
-	PQ[:len(lows)] = lows
+	# recursion base case
+	if n == 1:
+		arr[0] = p[0]*q[0]
+		return arr
 
-	# highs
-	highs = poly_m(P[len(P) // 2:], Q[len(Q) // 2:])
-	PQ[-len(highs) - 1: -1] = highs
+	# breaking the problem into sub problems. The big difference
+	# from four_sub is that there are only three sub problem to
+	# computes. Reduces time complexity from O(n^2) to O(n^1.5)
+	pq_ll = three_sub_other(p[:n//2], q[:n//2], n//2)
+	pq_hh = three_sub_other(p[n//2:], q[n//2:], n//2)
 
-	# mids
-	mid1 = poly_m(P[len(P) // 2:], Q[:len(Q) // 2])
-	mid2 = poly_m(P[:len(P) // 2], Q[len(Q) // 2:])
-	both = mid1 + mid2
-	PQ[len(mid1) // 2 + 1: len(mid1) // 2 + len(mid1) + 1] += both
+	# difference mid step
+	p_mid = p[:n//2] + p[n//2:]
+	q_mid = q[:n//2] + q[n//2:]
+	pq_mid = three_sub_other(p_mid, q_mid, n//2)
 
-	return PQ
+	# solution construction step
+	arr[:n] = pq_ll
+	arr[-n:] = pq_hh
+	arr[n // 2: n // 2 + n] += pq_mid - pq_hh - pq_ll
+
+	return arr
 
 
+# multiplies two arrays at polynomials
 def poly_m(arr1, arr2):
 	l1 = len(arr1)
 	l2 = len(arr2)
@@ -110,3 +120,6 @@ def poly_m(arr1, arr2):
 
 	return sol
 
+
+def run(func):
+	return func(P, Q, P.size)

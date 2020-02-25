@@ -57,7 +57,7 @@ def valid_input():
 	while user_input not in VALID_INPUT:
 		print('Enter a valid command.')
 		for option in VALID_INPUT:
-			print(f" | {option} -- {VALID_INPUT[option]}")
+			print(f" | {option} -- {VALID_INPUT[option][0]}")
 		user_input = input('--> ').upper()
 	return user_input
 

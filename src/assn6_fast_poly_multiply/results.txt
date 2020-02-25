@@ -1,0 +1,355 @@
+
++++++Trial 8.0+++++
+ Time for High school Algorithm --> 0.04686284065246582
+Time for the other Algorithm --> 0.21869850158691406
+Time for the three sub Algorithm --> 0.03124260902404785
+
++++++Trial 8.1+++++
+ Time for High school Algorithm --> 0.04688763618469238
+Time for the other Algorithm --> 0.24993610382080078
+Time for the three sub Algorithm --> 0.04684567451477051
+
++++++Trial 8.2+++++
+ Time for High school Algorithm --> 0.04689145088195801
+Time for the other Algorithm --> 0.22524499893188477
+Time for the three sub Algorithm --> 0.031241178512573242
+
++++++Trial 8.3+++++
+ Time for High school Algorithm --> 0.05032539367675781
+Time for the other Algorithm --> 0.20984268188476562
+Time for the three sub Algorithm --> 0.04686164855957031
+
++++++Trial 8.4+++++
+ Time for High school Algorithm --> 0.04684019088745117
+Time for the other Algorithm --> 0.2532641887664795
+Time for the three sub Algorithm --> 0.03124237060546875
+
++++++Trial 8.5+++++
+ Time for High school Algorithm --> 0.031241178512573242
+Time for the other Algorithm --> 0.25868940353393555
+Time for the three sub Algorithm --> 0.03590226173400879
+
++++++Trial 8.6+++++
+ Time for High school Algorithm --> 0.04819917678833008
+Time for the other Algorithm --> 0.2252941131591797
+Time for the three sub Algorithm --> 0.03458738327026367
+
++++++Trial 8.7+++++
+ Time for High school Algorithm --> 0.05894112586975098
+Time for the other Algorithm --> 0.24969100952148438
+Time for the three sub Algorithm --> 0.03424191474914551
+
++++++Trial 8.8+++++
+ Time for High school Algorithm --> 0.052523136138916016
+Time for the other Algorithm --> 0.281829833984375
+Time for the three sub Algorithm --> 0.039920806884765625
+
++++++Trial 8.9+++++
+ Time for High school Algorithm --> 0.0538630485534668
+Time for the other Algorithm --> 0.2742347717285156
+Time for the three sub Algorithm --> 0.04188823699951172
+
++++++Trial 9.0+++++
+ Time for High school Algorithm --> 0.22154974937438965
+Time for the other Algorithm --> 0.9566075801849365
+Time for the three sub Algorithm --> 0.11602330207824707
+
++++++Trial 9.1+++++
+ Time for High school Algorithm --> 0.21342945098876953
+Time for the other Algorithm --> 0.9588439464569092
+Time for the three sub Algorithm --> 0.10054826736450195
+
++++++Trial 9.2+++++
+ Time for High school Algorithm --> 0.18982172012329102
+Time for the other Algorithm --> 1.0101563930511475
+Time for the three sub Algorithm --> 0.11070442199707031
+
++++++Trial 9.3+++++
+ Time for High school Algorithm --> 0.25827765464782715
+Time for the other Algorithm --> 1.0120136737823486
+Time for the three sub Algorithm --> 0.11768221855163574
+
++++++Trial 9.4+++++
+ Time for High school Algorithm --> 0.23237895965576172
+Time for the other Algorithm --> 0.9177134037017822
+Time for the three sub Algorithm --> 0.10934996604919434
+
++++++Trial 9.5+++++
+ Time for High school Algorithm --> 0.18743038177490234
+Time for the other Algorithm --> 0.9416401386260986
+Time for the three sub Algorithm --> 0.09372758865356445
+
++++++Trial 9.6+++++
+ Time for High school Algorithm --> 0.18745660781860352
+Time for the other Algorithm --> 0.9473059177398682
+Time for the three sub Algorithm --> 0.08970451354980469
+
++++++Trial 9.7+++++
+ Time for High school Algorithm --> 0.20305228233337402
+Time for the other Algorithm --> 0.9080634117126465
+Time for the three sub Algorithm --> 0.0937042236328125
+
++++++Trial 9.8+++++
+ Time for High school Algorithm --> 0.20638418197631836
+Time for the other Algorithm --> 0.9079411029815674
+Time for the three sub Algorithm --> 0.10084223747253418
+
++++++Trial 9.9+++++
+ Time for High school Algorithm --> 0.1887216567993164
+Time for the other Algorithm --> 0.8925046920776367
+Time for the three sub Algorithm --> 0.10932540893554688
+
++++++Trial 10.0+++++
+ Time for High school Algorithm --> 0.7134792804718018
+Time for the other Algorithm --> 3.631139039993286
+Time for the three sub Algorithm --> 0.2989504337310791
+
++++++Trial 10.1+++++
+ Time for High school Algorithm --> 0.7654194831848145
+Time for the other Algorithm --> 3.7150189876556396
+Time for the three sub Algorithm --> 0.3124258518218994
+
++++++Trial 10.2+++++
+ Time for High school Algorithm --> 0.7131967544555664
+Time for the other Algorithm --> 3.700577974319458
+Time for the three sub Algorithm --> 0.30008411407470703
+
++++++Trial 10.3+++++
+ Time for High school Algorithm --> 0.7719972133636475
+Time for the other Algorithm --> 3.562680721282959
+Time for the three sub Algorithm --> 0.3124263286590576
+
++++++Trial 10.4+++++
+ Time for High school Algorithm --> 0.7407827377319336
+Time for the other Algorithm --> 3.5672266483306885
+Time for the three sub Algorithm --> 0.3124256134033203
+
++++++Trial 10.5+++++
+ Time for High school Algorithm --> 0.7654454708099365
+Time for the other Algorithm --> 3.7799642086029053
+Time for the three sub Algorithm --> 0.328047513961792
+
++++++Trial 10.6+++++
+ Time for High school Algorithm --> 0.7497982978820801
+Time for the other Algorithm --> 3.6185295581817627
+Time for the three sub Algorithm --> 0.328047513961792
+
++++++Trial 10.7+++++
+ Time for High school Algorithm --> 0.7654426097869873
+Time for the other Algorithm --> 3.5713467597961426
+Time for the three sub Algorithm --> 0.3326761722564697
+
++++++Trial 10.8+++++
+ Time for High school Algorithm --> 0.7185852527618408
+Time for the other Algorithm --> 3.729463577270508
+Time for the three sub Algorithm --> 0.3280482292175293
+
++++++Trial 10.9+++++
+ Time for High school Algorithm --> 0.7257287502288818
+Time for the other Algorithm --> 3.591555595397949
+Time for the three sub Algorithm --> 0.3222005367279053
+
++++++Trial 11.0+++++
+ Time for High school Algorithm --> 3.108999490737915
+Time for the other Algorithm --> 14.490409135818481
+Time for the three sub Algorithm --> 0.9060113430023193
+
++++++Trial 11.1+++++
+ Time for High school Algorithm --> 2.990244150161743
+Time for the other Algorithm --> 14.802752256393433
+Time for the three sub Algorithm --> 0.9871554374694824
+
++++++Trial 11.2+++++
+ Time for High school Algorithm --> 3.1532881259918213
+Time for the other Algorithm --> 14.65383768081665
+Time for the three sub Algorithm --> 0.9507110118865967
+
++++++Trial 11.3+++++
+ Time for High school Algorithm --> 2.9559502601623535
+Time for the other Algorithm --> 14.504184484481812
+Time for the three sub Algorithm --> 0.907630443572998
+
++++++Trial 11.4+++++
+ Time for High school Algorithm --> 2.8432188034057617
+Time for the other Algorithm --> 14.115569114685059
+Time for the three sub Algorithm --> 0.9403033256530762
+
++++++Trial 11.5+++++
+ Time for High school Algorithm --> 3.132429838180542
+Time for the other Algorithm --> 14.375362157821655
+Time for the three sub Algorithm --> 0.9165642261505127
+
++++++Trial 11.6+++++
+ Time for High school Algorithm --> 2.894890785217285
+Time for the other Algorithm --> 14.402387619018555
+Time for the three sub Algorithm --> 0.9130158424377441
+
++++++Trial 11.7+++++
+ Time for High school Algorithm --> 2.828679084777832
+Time for the other Algorithm --> 14.203915119171143
+Time for the three sub Algorithm --> 1.0070300102233887
+
++++++Trial 11.8+++++
+ Time for High school Algorithm --> 2.9637887477874756
+Time for the other Algorithm --> 17.0124568939209
+Time for the three sub Algorithm --> 1.0407626628875732
+
++++++Trial 11.9+++++
+ Time for High school Algorithm --> 3.1171655654907227
+Time for the other Algorithm --> 15.45787787437439
+Time for the three sub Algorithm --> 1.1921770572662354
+
++++++Trial 12.0+++++
+ Time for High school Algorithm --> 13.670663833618164
+Time for the other Algorithm --> 60.9672110080719
+Time for the three sub Algorithm --> 3.1962485313415527
+
++++++Trial 12.1+++++
+ Time for High school Algorithm --> 12.908463954925537
+Time for the other Algorithm --> 59.53911066055298
+Time for the three sub Algorithm --> 3.173464775085449
+
++++++Trial 12.2+++++
+ Time for High school Algorithm --> 11.710736274719238
+Time for the other Algorithm --> 57.10977363586426
+Time for the three sub Algorithm --> 2.7129390239715576
+
++++++Trial 12.3+++++
+ Time for High school Algorithm --> 11.828250885009766
+Time for the other Algorithm --> 57.47274971008301
+Time for the three sub Algorithm --> 2.771540880203247
+
++++++Trial 12.4+++++
+ Time for High school Algorithm --> 11.683933734893799
+Time for the other Algorithm --> 57.194703578948975
+Time for the three sub Algorithm --> 2.718107223510742
+
++++++Trial 12.5+++++
+ Time for High school Algorithm --> 11.804776191711426
+Time for the other Algorithm --> 57.3799045085907
+Time for the three sub Algorithm --> 2.7362353801727295
+
++++++Trial 12.6+++++
+ Time for High school Algorithm --> 11.731609582901001
+Time for the other Algorithm --> 57.74802374839783
+Time for the three sub Algorithm --> 2.7385854721069336
+
++++++Trial 12.7+++++
+ Time for High school Algorithm --> 11.618138551712036
+Time for the other Algorithm --> 56.81156778335571
+Time for the three sub Algorithm --> 2.6868643760681152
+
++++++Trial 12.8+++++
+ Time for High school Algorithm --> 11.764460325241089
+Time for the other Algorithm --> 57.12510299682617
+Time for the three sub Algorithm --> 2.787104845046997
+
++++++Trial 12.9+++++
+ Time for High school Algorithm --> 11.727915048599243
+Time for the other Algorithm --> 57.70367097854614
+Time for the three sub Algorithm --> 2.8424715995788574
+
++++++Trial 13.0+++++
+ Time for High school Algorithm --> 48.8855254650116
+Time for the other Algorithm --> 227.83182525634766
+Time for the three sub Algorithm --> 8.714861154556274
+
++++++Trial 13.1+++++
+ Time for High school Algorithm --> 48.67234134674072
+Time for the other Algorithm --> 236.4177327156067
+Time for the three sub Algorithm --> 8.308490991592407
+
++++++Trial 13.2+++++
+ Time for High school Algorithm --> 48.21740746498108
+Time for the other Algorithm --> 225.0965678691864
+Time for the three sub Algorithm --> 9.149133205413818
+
++++++Trial 13.3+++++
+ Time for High school Algorithm --> 46.483579874038696
+Time for the other Algorithm --> 227.23780250549316
+Time for the three sub Algorithm --> 8.228837013244629
+
++++++Trial 13.4+++++
+ Time for High school Algorithm --> 45.96023917198181
+Time for the other Algorithm --> 227.98030161857605
+Time for the three sub Algorithm --> 9.264255285263062
+
++++++Trial 13.5+++++
+ Time for High school Algorithm --> 51.95480799674988
+Time for the other Algorithm --> 250.99767684936523
+Time for the three sub Algorithm --> 8.441619873046875
+
++++++Trial 13.6+++++
+ Time for High school Algorithm --> 45.84823131561279
+Time for the other Algorithm --> 229.6282823085785
+Time for the three sub Algorithm --> 8.861212968826294
+
++++++Trial 13.7+++++
+ Time for High school Algorithm --> 46.3816180229187
+Time for the other Algorithm --> 229.84810376167297
+Time for the three sub Algorithm --> 8.72080135345459
+
++++++Trial 13.8+++++
+ Time for High school Algorithm --> 48.70393371582031
+Time for the other Algorithm --> 243.76700687408447
+Time for the three sub Algorithm --> 8.847625732421875
+
++++++Trial 13.9+++++
+ Time for High school Algorithm --> 47.64920401573181
+Time for the other Algorithm --> 238.9950466156006
+Time for the three sub Algorithm --> 8.219714164733887
+
++++++Trial 14.0+++++
+ Time for High school Algorithm --> 207.15215730667114
+Time for the other Algorithm --> 1049.607747554779
+Time for the three sub Algorithm --> 28.070542097091675
+
++++++Trial 14.1+++++
+ Time for High school Algorithm --> 201.18840193748474
+Time for the other Algorithm --> 1001.3870148658752
+Time for the three sub Algorithm --> 25.186007022857666
+
++++++Trial 14.2+++++
+ Time for High school Algorithm --> 192.7577223777771
+Time for the other Algorithm --> 916.5226173400879
+Time for the three sub Algorithm --> 25.42296576499939
+
++++++Trial 14.3+++++
+ Time for High school Algorithm --> 187.18905520439148
+Time for the other Algorithm --> 907.8733747005463
+Time for the three sub Algorithm --> 24.89007067680359
+
++++++Trial 14.4+++++
+ Time for High school Algorithm --> 186.58189606666565
+Time for the other Algorithm --> 914.704386472702
+Time for the three sub Algorithm --> 24.833751916885376
+
++++++Trial 14.5+++++
+ Time for High school Algorithm --> 180.30511808395386
+Time for the other Algorithm --> 906.2833788394928
+Time for the three sub Algorithm --> 24.80475401878357
+
++++++Trial 14.6+++++
+ Time for High school Algorithm --> 192.7786841392517
+Time for the other Algorithm --> 934.7943739891052
+Time for the three sub Algorithm --> 34.347885847091675
+
++++++Trial 14.7+++++
+ Time for High school Algorithm --> 267.04195284843445
+Time for the other Algorithm --> 1285.083333015442
+Time for the three sub Algorithm --> 32.51517152786255
+
++++++Trial 14.8+++++
+ Time for High school Algorithm --> 250.25494527816772
+Time for the other Algorithm --> 1263.6650264263153
+Time for the three sub Algorithm --> 33.4062283039093
+
++++++Trial 14.9+++++
+ Time for High school Algorithm --> 244.5441563129425
+Time for the other Algorithm --> 1269.2864544391632
+Time for the three sub Algorithm --> 33.38179326057434
+
+
+[ 1.27047330e-02 -1.97367607e+01]
+[ 6.28732511e-02 -9.82700823e+01]
+[ 1.74827990e-03 -2.17241708e+00]
