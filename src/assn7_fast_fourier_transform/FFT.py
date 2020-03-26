@@ -1,4 +1,7 @@
 from numpy import exp, pi, random, array, fft, zeros, concatenate, arange, allclose, conjugate
+import matplotlib.pyplot as plt
+import time
+import pathlib2 as path
 
 
 # fast fourier transform
@@ -53,10 +56,37 @@ def fft_helper(arr, function):
 
 do_print = False
 
-arr = array([0,1,2,3,4,5,6,7], dtype=complex)
-print(fft.fft(arr))
-print('mine')
-print(fft_helper(arr, my_fft))
-print("It's close enough? : ", allclose(fft_helper(arr, my_fft), fft.fft(arr)))
-print(fft_helper(fft.fft(arr), my_ifft))
+
+if __name__ == "__main__":
+    # run time trails from n = 128 to n = ...
+    n = 23
+    from_n = 7
+    numpy_runtimes = []
+    algo_runtimes = []
+
+    for i in range(from_n, n):
+        arr = random.randint(0, 2**i, 2**i)
+
+        start = time.time()
+        fft_helper(arr, my_fft)
+        mid = time.time()
+        fft.fft(arr)
+        end = time.time()
+
+        numpy_runtimes.append(end-mid)
+        algo_runtimes.append(mid-start)
+
+    print('Numpy: \n', numpy_runtimes)
+    print('mine: \n', algo_runtimes)
+    plt.plot(arange(from_n, n), numpy_runtimes, label="Built-in Numpy FFT")
+    plt.plot(arange(from_n, n), algo_runtimes, label="FFT Implementation")
+    plt.xlabel("Size of N (log 2)")
+    plt.ylabel("Run time in log 2 Seconds")
+    plt.legend()
+    plt.yscale('log', basey=2)
+    plt.title("Log-Log Graph of Runtime vs N for various FFT algorithms")
+    plt.savefig(path.Path.joinpath(path.Path.cwd(), f'Graph(n={n}).png'))
+    plt.show()
+
+
 
