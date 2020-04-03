@@ -14,15 +14,15 @@ multiplication
 def create_int(n: int):
 
     if n > 20:  # to avoid very large numbers
-        return np.random.randint(0, 65545, np.power(2, n), np.uint64)
+        return np.random.randint(0, 2147483647//2, np.power(2, n), np.int64)
     else:
-        return np.random.randint(0, 65545, np.power(2, n), np.uint64)
+        return np.random.randint(0, 2147483647//2, np.power(2, n), np.int64)
 
 
 # high school math
 def foil_multiply(num1: np.array, num2: np.array) -> np.array:
     assert len(num1) == len(num2)
-    multiplied = np.zeros(2 * len(num1), dtype=float)
+    multiplied = np.zeros(2 * len(num1), dtype=np.int64)
 
     for i in range(len(num1)):
         for j in range(len(num2)):
@@ -186,12 +186,10 @@ def carry_over_overflow(arr):
         arr = np.concatenate([np.zeros((1,)), arr])
     elif isinstance(arr, list) and arr[0] != 0:
         arr = [0] + arr
-
     for i in range(len(arr) - 1, 0, -1):
         if arr[i] >= MAX:
-            while arr[i] >= MAX:
-                arr[i] -= MAX
-                arr[i-1] += 1
+            arr[i-1] += arr[i] % MAX
+            arr[i] = arr[i] // MAX
     return arr
 
 # takes care of the overflow of int 2^32 and string padding
@@ -204,8 +202,9 @@ if __name__ == "__main__":
     arr = create_int(size)
     print(f"arr : {arr}")
     arr2 = create_int(size)
-    print('results of three sub:   ', correct_printf(three_sub_other(arr, arr2)))
+    print(f"arr 2: {arr2}")
     print('results of high school: ', correct_printf(foil_multiply(arr, arr2)))
+    print('results of three sub:   ', correct_printf(three_sub_other(arr, arr2)))
     print('results of fft multiply:', correct_printf(fft_multiply(arr, arr2)))
 
     if len(sys.argv) > 1 and sys.argv[1] == "-r":
@@ -227,7 +226,7 @@ if __name__ == "__main__":
                   [0.0029914379119873047, 0.012471437454223633, 0.0468747615814209, 0.19447946548461914,
                    0.772932767868042, 3.2929346561431885, 13.544007301330566, 49.57841515541077, 202.50718665122986,
                    839.6248352527618, 3248.8114218711853])
-    three_sub_results =  ([6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+    three_sub_results = ([6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
                           [0.003988981246948242, 0.010964393615722656, 0.034920454025268555, 0.10271143913269043,
                            0.304180383682251, 0.9285223484039307, 2.7829794883728027, 9.199534177780151,
                            28.146015644073486, 83.44644165039062, 242.09331274032593, 777.3618574142456, 2276.2384588718414])
