@@ -96,11 +96,11 @@ def three_sub_other(p: np.array, q: np.array, n: int) -> np.array:
 
     return arr
 
-def getV(n, sign=1):
+def getV(n, sign=-1):
     return np.array([complex(np.cos(2*np.pi*i/n), sign * np.sin(2*np.pi*i/n)) for i in range(0, n)])
 
 # TODO understand this code and switch the signs to make it into ifft
-def fft(p, v, n, depth = 0):
+def fft(p, v, n, depth=0):
     #print("%s%s" % (" |"*depth+"in =", str(p)))
     if n == 1:
         #print("%s%s" % (" |"*depth+"out=", str(p)))
@@ -161,6 +161,20 @@ def fft_multiply(arr1, arr2):
     return multiplied_coefficients
 
 
+def gen_omegas(n, inverse = False):
+  angle = 0
+  delt = 2*np.pi/n
+  omegas = []
+  for _ in range(0, n+1):
+    if inverse:
+      omegas.append(np.cos(angle) - 1j*np.sin(angle))
+    else:
+      omegas.append(np.cos(angle) + 1j*np.sin(angle))
+    angle += delt
+  return omegas
+
+
+
 if __name__ == "__main__":
     size = 2
     arr = create_int(size)
@@ -172,3 +186,9 @@ if __name__ == "__main__":
     print("my fft: ", fft(arr, getV(2**size), 2**size))
     print("np fft: ", np.fft.fft(arr))
     print("my new fft: ", fft_helper(arr))
+
+
+    print(getV(4))
+    print(gen_omegas(4))
+
+
