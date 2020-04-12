@@ -198,6 +198,9 @@ def correct_printf(arr):
 
 
 if __name__ == "__main__":
+    arr = [0,1,2,3,4,5,6,7]
+    print(fft_helper(arr))
+    print(np.fft.fft(arr))
     size = 2
     arr = create_int(size)
     print(f"arr : {arr}")

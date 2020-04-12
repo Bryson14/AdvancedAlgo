@@ -16,13 +16,19 @@ def fft_inter(p, w, n):
     # fill in cache from base case row up
     for i in range(1, logn + 1):
 
-        omegas = np.power(w, 2)
+        # squares the imaginary roots enough to mimic recursion
+        omegas = w
+        for s in range(logn - i):
+            omegas = np.power(omegas, 2)
+
         # fills in cache side to side
         size = 1 << i
         for j in range(0, n, size):
+            idx = 0
             for k in range(size // 2):
-                cache[i][j + k] =             cache[i - 1][j + k] + omegas[j] * cache[i - 1][j + k + size // 2]
-                cache[i][j + size // 2 + k] = cache[i - 1][j + k] - omegas[j] * cache[i - 1][j + k + size // 2]
+                cache[i][j + k] =             cache[i - 1][j + k] + omegas[idx] * cache[i - 1][j + k + size // 2]
+                cache[i][j + size // 2 + k] = cache[i - 1][j + k] - omegas[idx] * cache[i - 1][j + k + size // 2]
+                idx += 1
 
     return cache[logn]
 
@@ -66,6 +72,6 @@ def fft(p):
     return fft_inter(add_buffer(p), gen_omegas(l), l)
 
 
-arr = [0,1,2,3,4,5,6,7]
+arr = [8,4,6,5,1,3,2,5]
 print(fft(arr))
 print(np.fft.fft(arr))
