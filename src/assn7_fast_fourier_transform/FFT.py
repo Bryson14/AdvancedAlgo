@@ -59,7 +59,7 @@ do_print = False
 
 if __name__ == "__main__":
     # run time trails from n = 128 to n = ...
-    n = 23
+    n = 10
     from_n = 7
     numpy_runtimes = []
     algo_runtimes = []
