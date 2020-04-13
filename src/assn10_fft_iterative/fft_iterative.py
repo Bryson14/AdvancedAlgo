@@ -71,7 +71,3 @@ def fft(p):
     l = len(p)
     return fft_inter(add_buffer(p), gen_omegas(l), l)
 
-
-arr = [8,4,6,5,1,3,2,5]
-print(fft(arr))
-print(np.fft.fft(arr))
